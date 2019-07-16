@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ApiGatewayOcelot.Controllers
+namespace ApiGatewayOcelot.Service1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -14,14 +14,14 @@ namespace ApiGatewayOcelot.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] { "gateway value1", "gateway value2" };
+            return new string[] { "service1 value1", "service1 value2" };
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
-            return "gateway value";
+            return "service1 value";
         }
 
         // POST api/values

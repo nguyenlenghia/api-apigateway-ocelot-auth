@@ -1,0 +1,38 @@
+{
+  "GlobalConfiguration": {
+    "RequestIdKey": "OcRequestId",
+    "AdministrationPath": "/administration",
+    //"UseServiceDiscovery": true,
+    //"ServiceDiscoveryProvider": {
+    //  "Type": "Eureka",
+    //  "Host": "localhost",
+    //  "Port": "8761"
+    //}
+  },
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/api/{url}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44300
+        }
+      ],
+      "UpstreamPathTemplate": "/service1/{url}",
+      "UpstreamHttpMethod": [ "Get", "Post" ]
+    },
+    //{
+    //  "DownstreamPathTemplate": "/api/Values/{everything}",
+    //  "DownstreamScheme": "https",
+    //  "DownstreamHostAndPorts": [
+    //    {
+    //      "Host": "localhost",
+    //      "Port": 44300
+    //    }
+    //  ],
+    //  "UpstreamPathTemplate": "/api/Values/{everything}",
+    //  "UpstreamHttpMethod": [ "Get" ]
+    //}
+  ]
+}
